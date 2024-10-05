@@ -50,7 +50,7 @@ const Projects = () => {
 
   return (
     <div className="font-serif">
-      <div className=" flex mt-14">
+      <div className=" flex flex-col md:flex-row mt-14">
         <div className="flex flex-col just between w-1/2">
           <NavLink to="/home">
             <div className="flex m-8">
@@ -66,7 +66,7 @@ const Projects = () => {
           </div>
         </div>
         <div>
-          <img src={people} className="mr-16" alt="people" />
+          <img src={people} className="mr-16 mt-8" alt="people" />
         </div>
       </div>
 
@@ -76,11 +76,11 @@ const Projects = () => {
           <FaChevronLeft
             onClick={prevSlide}
             aria-label="Previous Slide"
-            className="font-light text-5xl my-2 m-auto absolute top-1/2 left-14 transform -translate-y-1/2 z-10"
+            className="font-light hidden md:block text-5xl my-2 m-auto absolute top-1/2 left-14 transform -translate-y-1/2 z-10"
           />
           <div className="relative overflow-hidden w-full">
             <div
-              className="w-[80%] mx-auto flex transition-transform duration-500"
+              className="w-[80%] mx-auto flex flex-col md:flex-row transition-transform duration-500"
               style={{
                 transform: `translateX(-${
                   currentIndex * (100 / maxVisibleCards)
@@ -94,7 +94,7 @@ const Projects = () => {
                 return (
                   <div
                     key={index}
-                    className={`flex-shrink-0 w-[34%]  duration-500 px-4 ${
+                    className={`flex-shrink-0 w-[100%] md:w-[34%] mt-8  duration-500 px-4 ${
                       !isVisible ? "opacity-0" : ""
                     }`}
                   >
@@ -113,7 +113,7 @@ const Projects = () => {
           <FaChevronRight
             onClick={nextSlide}
             aria-label="Next Slide"
-            className="font-light text-5xl my-2 mx-2 absolute top-1/2 right-14 transform -translate-y-1/2 z-10"
+            className="font-light hidden md:block text-5xl my-2 mx-2 absolute top-1/2 right-14 transform -translate-y-1/2 z-10"
           />
         </div>
       </div>
