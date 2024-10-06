@@ -72,7 +72,7 @@ const Projects = () => {
 
       {/* Cards */}
       <div className="grid gap-2 my-8 mt-60 ">
-        <div className="relative w-full mx-auto px-4 py-8">
+        <div className="relative w-full hidden xl:block mx-auto px-4 py-8">
           <FaChevronLeft
             onClick={prevSlide}
             aria-label="Previous Slide"
@@ -116,6 +116,24 @@ const Projects = () => {
             className="font-light hidden md:block text-5xl my-2 mx-2 absolute top-1/2 right-14 transform -translate-y-1/2 z-10"
           />
         </div>
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-y-8 xl:hidden "> 
+        {cards.map((partner, index) => {
+                return (
+                  <div
+                    key={index}
+                    className={`flex-shrink-0 mt-8  duration-500 px-4`}
+                  >
+                    <CourseCard
+                      onclick={Change}
+                      img={partner.img}
+                      CourseName={partner.name}
+                      btnName="Explore"
+                      imgHei="h-52"
+                    />
+                  </div>
+                );
+              })}
+          </div>
       </div>
 
       <div className=" my-20 mt-40">

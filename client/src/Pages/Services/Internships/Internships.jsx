@@ -66,7 +66,7 @@ const Internships = () => {
           <FaChevronLeft
             onClick={prevSlide}
             aria-label="Previous Slide"
-            className="font-light hidden md:block text-5xl my-2 m-auto absolute top-1/2 left-14 transform -translate-y-1/2 z-10"
+            className="font-light hidden xl:block text-5xl my-2 m-auto absolute top-1/2 left-14 transform -translate-y-1/2 z-10"
           />
           <div className="relative overflow-hidden w-full">
             <div
@@ -84,7 +84,7 @@ const Internships = () => {
                 return (
                   <div
                     key={index}
-                    className={`flex-shrink-0 w-[90%] md:w-[34%] duration-500 px-4 ${
+                    className={`flex-shrink-0 w-[34%] hidden xl:block duration-500 px-4 ${
                       !isVisible ? "opacity-0" : ""
                     }`}
                   >
@@ -103,8 +103,26 @@ const Internships = () => {
           <FaChevronRight
             onClick={nextSlide}
             aria-label="Next Slide"
-            className="font-light hidden md:block text-5xl my-2 mx-2 absolute top-1/2 right-14 transform -translate-y-1/2 z-10"
+            className="font-light hidden xl:block text-5xl my-2 mx-2 absolute top-1/2 right-14 transform -translate-y-1/2 z-10"
           />
+        </div>
+
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-y-8 xl:hidden ">
+        {cards.map((partner, index) => {
+                return (
+                  <div
+                    key={index}
+                    className={`flex-shrink-0 duration-500 px-4`}
+                  >
+                    <CourseCard
+                      onclick={()=>Change(partner.name)}
+                      img={partner.img}
+                      CourseName={partner.name}
+                      btnName="Apply"
+                    />
+                  </div>
+                );
+              })}
         </div>
       </div>
 
